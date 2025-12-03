@@ -12,7 +12,7 @@ const CustomInput = ({ placeholder = 'Enter text', value, onChangeText, label, s
         <View className='w-full'>
             <Text className='label'>{label}</Text>
 
-            <TextInput autoCapitalize='none' autoCorrect={false} value={value} secureTextEntry={secureTextEntry} keyboardType={keyboardType} onFocus={() => setIsFocused(true)} onBlur={() => setIsFocused(false)} placeholder={placeholder} placeholderTextColor='#888' className={cn('input', isFocused ? 'border-primary' : 'border-gray-300')} />
+            <TextInput autoCapitalize='none' autoCorrect={false} value={value} secureTextEntry={secureTextEntry} keyboardType={keyboardType} onFocus={() => setIsFocused(true)} onBlur={() => setIsFocused(false)} onChangeText={onChangeText} placeholder={placeholder} placeholderTextColor='#888' className={cn('input', isFocused ? 'border-primary' : 'border-gray-300')} />
         </View>
     )
 }
