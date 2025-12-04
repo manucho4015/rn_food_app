@@ -6,7 +6,12 @@ export const appwriteConfig = {
     prjectId: process.env.EXPO_PUBLIC_APPWRITE_PROJECT_ID!,
     platform: 'com.manucho.foodordering',
     databaseId: process.env.EXPO_PUBLIC_APPWRITE_DATABASE_ID!,
-    userTableId: process.env.EXPO_PUBLIC_APPWRITE_TABLE_ID!
+    bucketId: process.env.EXPO_PUBLIC_APPWRITE_BUCKET_ID!,
+    userTableId: process.env.EXPO_PUBLIC_APPWRITE_USER_TABLE_ID!,
+    categoriesTableId: process.env.EXPO_PUBLIC_APPWRITE_CATEGORIES_TABLE_ID!,
+    menuTableId: process.env.EXPO_PUBLIC_APPWRITE_MENU_TABLE_ID!,
+    customizationsTableId: process.env.EXPO_PUBLIC_APPWRITE_CUSTOMIZATIONS_TABLE_ID!,
+    menuCustomizationsTableId: process.env.EXPO_PUBLIC_APPWRITE_MENU_CUSTOMIZATIONS_TABLE_ID!,
 }
 
 export const client = new Client()
