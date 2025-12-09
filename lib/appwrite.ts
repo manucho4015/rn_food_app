@@ -1,9 +1,9 @@
 import { CreateUserParams, SignInParams } from "@/type"
-import { Account, Avatars, Client, ID, Query, TablesDB } from "react-native-appwrite"
+import { Account, Avatars, Client, ID, Query, Storage, TablesDB } from "react-native-appwrite"
 
 export const appwriteConfig = {
     endpoint: process.env.EXPO_PUBLIC_APPWRITE_ENDPOINT!,
-    prjectId: process.env.EXPO_PUBLIC_APPWRITE_PROJECT_ID!,
+    projectId: process.env.EXPO_PUBLIC_APPWRITE_PROJECT_ID!,
     platform: 'com.manucho.foodordering',
     databaseId: process.env.EXPO_PUBLIC_APPWRITE_DATABASE_ID!,
     bucketId: process.env.EXPO_PUBLIC_APPWRITE_BUCKET_ID!,
@@ -16,11 +16,12 @@ export const appwriteConfig = {
 
 export const client = new Client()
 
-client.setEndpoint(appwriteConfig.endpoint).setProject(appwriteConfig.prjectId).setPlatform(appwriteConfig.platform)
+client.setEndpoint(appwriteConfig.endpoint).setProject(appwriteConfig.projectId).setPlatform(appwriteConfig.platform)
 
 export const account = new Account(client)
 export const tables = new TablesDB(client)
 const avatars = new Avatars(client)
+export const storage = new Storage(client)
 
 export const createUser = async ({ email, password, name }: CreateUserParams) => {
     try {
